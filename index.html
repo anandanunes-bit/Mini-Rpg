@@ -19,60 +19,41 @@
                 <div class="character-symbol">G</div>
                 <h2>Guardião</h2>
                 <p id="player-health-text">100 / 100</p>
-
                 <div class="health-track">
                     <div id="player-health-bar" class="health-bar player-health"></div>
                 </div>
-
-                <p>Poções: <strong id="potion-count">3</strong></p>
+                <p>Poções: <span id="potion-count">3</span></p>
                 <p id="defense-status">Defesa inativa</p>
             </article>
 
-            <div class="versus">VS</div>
+            <div class="vs">VS</div>
 
             <article class="character-card enemy-card">
                 <div class="character-symbol">S</div>
                 <h2 id="enemy-name">Slime Sombrio</h2>
                 <p id="enemy-health-text">80 / 80</p>
-
                 <div class="health-track">
                     <div id="enemy-health-bar" class="health-bar enemy-health"></div>
                 </div>
-
                 <p>Criatura da floresta corrompida</p>
             </article>
         </section>
 
-        <section class="turn-panel">
-            <p id="turn-message" aria-live="polite">Escolha sua primeira ação.</p>
+        <p id="turn-message" class="turn-message">Escolha sua primeira ação.</p>
 
-            <div class="action-buttons">
-                <button type="button" id="attack-button">Atacar</button>
-                <button type="button" id="defend-button">Defender</button>
-                <button type="button" id="heal-button">Usar poção</button>
-            </div>
-
-            <button type="button" id="restart-button" hidden>Jogar novamente</button>
+        <section class="actions">
+            <button id="attack-button" class="action-button">Atacar</button>
+            <button id="defend-button" class="action-button">Defender</button>
+            <button id="heal-button" class="action-button">Usar poção</button>
+            <button id="restart-button" class="action-button secondary" hidden>Reiniciar</button>
         </section>
 
-        <section class="battle-log-panel">
-            <div class="panel-heading">
-                <h2>Histórico da batalha</h2>
-                <button type="button" id="clear-save-button" class="secondary-button">
-                    Apagar progresso salvo
-                </button>
-            </div>
-
-            <ul id="battle-log" aria-live="polite">
-                <li>A batalha começou.</li>
-            </ul>
+        <section class="log-section">
+            <h3>Histórico da batalha</h3>
+            <ul id="battle-log" class="battle-log"></ul>
+            <button id="clear-save-button" class="clear-button">Apagar progresso salvo</button>
         </section>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>
-
-DESAFIO 3!
-<p>Nível: <strong id="player-level">1</strong></p>
-<p>XP: <strong id="player-exp">0</strong>/100</p>
