@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #071a14, #173c2d);
+    color: #f5f7f6;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 920px;
+    padding: 30px;
+    background: rgba(9, 29, 22, 0.96);
+    border: 1px solid #4c8068;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.game-header h1 {
+    margin: 5px 0 10px;
+    font-size: 38px;
+    color: #a7f3d0;
+}
+
+.game-header p {
+    margin: 0;
+    color: #c9ded4;
+}
+
+.game-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.character-card {
+    padding: 24px;
+    border-radius: 14px;
+    text-align: center;
+    background: #102a21;
+    border: 1px solid #365f4d;
+}
+
+.player-card {
+    border-top: 6px solid #34d399;
+}
+
+.enemy-card {
+    border-top: 6px solid #f87171;
+}
+
+.character-symbol {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #234b3a;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.character-card h2 {
+    margin: 0 0 8px;
+}
+
+.health-track {
+    height: 18px;
+    margin: 12px 0;
+    overflow: hidden;
+    background: #06100c;
+    border-radius: 20px;
+}
+
+.health-bar {
+    width: 100%;
+    height: 100%;
+    transition: width 0.4s ease, background 0.4s ease;
+}
+
+.player-health {
+    background: #22c55e;
+}
+
+.enemy-health {
+    background: #ef4444;
+}
+
+.health-bar.danger {
+    background: #f59e0b;
+}
+
+.versus {
+    font-size: 22px;
+    font-weight: bold;
+    color: #facc15;
+}
+
+.turn-panel {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 14px;
+    background: #0b2119;
+    text-align: center;
+}
+
+#turn-message {
+    min-height: 28px;
+    margin-top: 0;
+    font-weight: bold;
+    color: #d1fae5;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #34d399;
+    color: #052e20;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+#restart-button {
+    margin-top: 15px;
+    background: #facc15;
+    color: #3f3100;
+}
+
+.secondary-button {
+    padding: 9px 12px;
+    background: #d6e8df;
+    color: #123a2c;
+    font-size: 13px;
+}
+
+.battle-log-panel {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 14px;
+    background: #071711;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#battle-log {
+    max-height: 240px;
+    overflow-y: auto;
+    margin: 18px 0 0;
+    padding-left: 24px;
+}
+
+#battle-log li {
+    margin-bottom: 8px;
+    color: #d6e8df;
+}
+
+#battle-log .success {
+    color: #86efac;
+}
+
+#battle-log .danger {
+    color: #fca5a5;
+}
+
+#battle-log .warning {
+    color: #fde68a;
+}
+
+[hidden] {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .versus {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

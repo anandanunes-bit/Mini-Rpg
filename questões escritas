@@ -1,0 +1,41 @@
+Aqui estão respostas objetivas para as perguntas finais da atividade:
+
+### 1. Qual é a diferença entre alterar o objeto `gameState` e alterar diretamente um elemento HTML?
+
+Alterar o **`gameState`** modifica os dados do jogo (vida, poções, inimigo etc.). Alterar diretamente um elemento HTML modifica apenas o que aparece na tela. O ideal é primeiro atualizar o `gameState` e depois chamar `renderGame()` para que a interface reflita o estado atual do jogo. 
+
+---
+
+### 2. Por que o `localStorage` exige `JSON.stringify()` e `JSON.parse()`?
+
+Porque o `localStorage` armazena apenas texto. `JSON.stringify()` converte o objeto em texto para ser salvo, e `JSON.parse()` converte esse texto novamente em objeto quando os dados são recuperados.  
+
+---
+
+### 3. O que poderia acontecer se os dados recuperados não fossem validados?
+
+Dados inválidos ou corrompidos poderiam causar erros no jogo, impedir seu funcionamento ou apresentar informações incorretas. Por isso, a validação verifica se a estrutura dos dados é válida antes de utilizá-los. 
+
+---
+
+### 4. Qual é a vantagem de concentrar as atualizações visuais em `renderGame()`?
+
+Centralizar todas as atualizações em `renderGame()` evita repetição de código, facilita a manutenção e garante que todos os elementos da interface sejam atualizados de forma consistente após qualquer ação do jogador. 
+
+---
+
+### 5. Qual é a diferença entre um erro esperado da regra do jogo e um erro inesperado de programação?
+
+Um **erro esperado** faz parte das regras do jogo, como tentar usar uma poção sem possuir nenhuma. Já um **erro inesperado** ocorre por falhas de programação ou situações imprevistas e deve ser tratado para evitar que a aplicação pare de funcionar. 
+
+---
+
+### 6. Por que um `catch` vazio é uma má prática?
+
+Porque ele oculta os erros. Sem registrar ou tratar o problema, fica muito mais difícil identificar a causa da falha e corrigir o código. No projeto, os erros são registrados com `console.error()` e o usuário recebe uma mensagem apropriada. 
+
+---
+
+### 7. Em quais outras aplicações o mesmo modelo de estado, renderização, eventos e persistência poderia ser utilizado?
+
+Esse modelo pode ser utilizado em diversos tipos de aplicações, como sistemas de cadastro, listas de tarefas, lojas virtuais, sistemas de reservas, aplicativos de controle financeiro e outros jogos, pois todos utilizam dados, interface, eventos do usuário e armazenamento de informações.
